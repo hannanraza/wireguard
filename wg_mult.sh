@@ -26,14 +26,14 @@ function check_selinux(){
     CHECK=$(grep SELINUX= /etc/selinux/config | grep -v "#")
     if [ "$CHECK" == "SELINUX=enforcing" ]; then
         red "============"
-        red "关闭SELinux"
+        red "Close SELinux"
         red "============"
         sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
         setenforce 0
     fi
     if [ "$CHECK" == "SELINUX=permissive" ]; then
         red "============"
-        red "关闭SELinux"
+        red "Close SELinux"
         red "============"
         sed -i 's/SELINUX=permissive/SELINUX=disabled/g' /etc/selinux/config
         setenforce 0
@@ -114,7 +114,7 @@ function install_wg(){
         install_tools "apt"
     else
         red "=================="
-        red "$RELEASE $VERSION系统暂未支持"
+        red "$RELEASE $VERSIONTemporarily Not Supported"
         red "=================="
     fi
 }
@@ -233,9 +233,9 @@ function remove_wg(){
 function start_menu(){
     clear
     green "==============================================="
-    green " 介绍: 一键安装wireguard, 增加wireguard多用户"
-    green " 系统: Centos7+/Ubuntu18.04+/Debian9+"
-    green " 作者: atrandys www.atrandys.com"
+    green " Introduction: One Click Wireguard Script, Add more Wireguard Users"
+    green " Systems Supported: Centos7+/Ubuntu18.04+/Debian9+"
+    green " Original Author: atrandys www.atrandys.com"
     green " 提示: 脚本安装过程中会升级内核，请勿生产环境使用"
     green "==============================================="
     green "1. Install wireguard"
@@ -244,7 +244,7 @@ function start_menu(){
     green "4. Add a new user"
     red "0. Exit"
     echo
-    read -p "请选择:" num
+    read -p "Please make a selection:" num
     case "$num" in
         1)
         check_selinux
