@@ -238,11 +238,11 @@ function start_menu(){
     green " 作者: atrandys www.atrandys.com"
     green " 提示: 脚本安装过程中会升级内核，请勿生产环境使用"
     green "==============================================="
-    green "1. 安装wireguard"
-    red "2. 删除wireguard"
-    green "3. 显示默认用户二维码"
-    green "4. 增加用户"
-    red "0. 退出"
+    green "1. Install wireguard"
+    red "2. Delete wireguard"
+    green "3. Show default user QR Code"
+    green "4. Add a new user"
+    red "0. Exit"
     echo
     read -p "请选择:" num
     case "$num" in
